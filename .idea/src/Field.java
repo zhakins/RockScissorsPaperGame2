@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Field {
     private String p1Figure;
     private String p2Figure;
@@ -27,5 +29,18 @@ public class Field {
 
     public void setP2Figure(String p2Figure) {
         this.p2Figure = p2Figure;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Field field = (Field) o;
+        return Objects.equals(p1Figure, field.p1Figure) && Objects.equals(p2Figure, field.p2Figure);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(p1Figure, p2Figure);
     }
 }

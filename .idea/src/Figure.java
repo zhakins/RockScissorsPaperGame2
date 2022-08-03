@@ -1,3 +1,4 @@
+import java.util.Random;
 public enum Figure {
     ROCK(1),
     SCISSORS(2),
@@ -10,7 +11,10 @@ public enum Figure {
     public int getVal() {
         return val;
     }
-    public static Figure getRandom() {
-        return values()[(int) (Math.random() * values().length)];
+    private static final Random PRNG = new Random();
+    private static Figure[] figures = values();
+    public static Figure randomFigure()  {
+        //Figure[] figures = figures.values();
+        return figures[PRNG.nextInt(figures.length)];
     }
 }
