@@ -3,7 +3,6 @@ public class GameRunner {
         GameLogic gl = new GameLogic();
 
         gl.start();
-        Figure figure;
-        //System.out.println(Figure.randomFigure());
+
     }
 }
